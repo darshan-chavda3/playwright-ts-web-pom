@@ -8,7 +8,7 @@ Before following the steps given below, please ensure that npm and node are inst
 - **Step2:** Install Playwright supported browsers `npx playwright install`
 
 ## Commands
-- Run all the test cases from `./tests` folder
+- Run all the test cases from "./tests" folder
   ```bash
   npm run test
   ```
@@ -22,5 +22,5 @@ Before following the steps given below, please ensure that npm and node are inst
   ```
 - Run test cases only with specific tag
   ```bash
-  npm run test -- --grep "{@tag}"
+  npm run test -- --grep "{@tag-name}"
   ```
