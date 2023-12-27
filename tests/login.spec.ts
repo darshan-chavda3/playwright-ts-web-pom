@@ -1,6 +1,6 @@
 import { expect,test } from "@playwright/test";
 import { Play } from "../pages/play";
-import * as loginData from "../data/login-data.json"
+import * as loginData from "../data/login-data.json";
 
 test('@P1 @Smoke verify user login with valid credentials and logout successfully', async ({ page }) => {
   const play = new Play(page);
@@ -11,7 +11,7 @@ test('@P1 @Smoke verify user login with valid credentials and logout successfull
   await expect(page).toHaveURL('/inventory.html');
   await play.inventoryPage.burgerMenu.click();
   await play.inventoryPage.logoutOption.click();
-  await expect(page).toHaveURL('/')
+  await expect(page).toHaveURL('/');
 })
 
 test('@P1 @Regression verify user is unable to login with invalid credentials', async ({ page }) => {
