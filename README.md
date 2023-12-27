@@ -4,15 +4,15 @@ This repository demonstrates the implementation of the Page Object Model (POM) d
 
 ## Getting Started
 Before following the steps given below, please ensure that npm and node are installed on your machine.
-- **Step1:** Install Playwright latest version `npm init playwright@latest`
+- **Step1:** Install Playwright's latest version `npm init playwright@latest`
 - **Step2:** Install Playwright supported browsers `npx playwright install`
 
 ## Commands
-- Run all the test cases from "./tests" folder
+- Run all the test cases from the "./tests" folder
   ```bash
   npm run test
   ```
-- Run test cases from specific file
+- Run test cases for a specific file
   ```bash
   npm run test {file-name.spec.ts}
   ```
@@ -20,7 +20,11 @@ Before following the steps given below, please ensure that npm and node are inst
   ```bash
   npm run test -- --headed
   ```
-- Run test cases only with specific tag
+- Run test cases using tag
   ```bash
   npm run test -- --grep "{@tag-name}"
+  ```
+- Run test cases with a specific browser
+  ```bash
+  npm run test -- --project {browser-name}
   ```
