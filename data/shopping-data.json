@@ -1,0 +1,8 @@
+{
+  "firstName": "John",
+  "lastName": "Doe",
+  "postalCode": "90001",
+  "itemName": "Sauce Labs Backpack",
+  "postalErrorMessage": "Error: Postal Code is required",
+  "successMessage": "Thank you for your order!"
+}

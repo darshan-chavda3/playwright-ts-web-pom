@@ -1,6 +1,7 @@
 import { Page } from "@playwright/test";
 import { LoginPage } from "./login-page";
 import { InventoryPage } from "./inventory-page";
+import { CartPage } from "./cart-page";
 
 export class Play {
   constructor(protected page: Page) {
@@ -13,5 +14,9 @@ export class Play {
 
   public get inventoryPage(): InventoryPage {
     return new InventoryPage(this.page);
+  }
+
+  public get cartPage(): CartPage {
+    return new CartPage(this.page);
   }
 }

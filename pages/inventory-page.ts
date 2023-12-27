@@ -11,4 +11,6 @@ export class InventoryPage {
   logoutOption = this.page.locator('//a[text()="Logout"]');
   resetAppStateOption = this.page.locator('//a[text()="Reset App State"]');
   burgerMenuClose = this.page.locator('//button[@id="react-burger-cross-btn"]');
+  addCartBackpackButton = this.page.locator('//button[@id="add-to-cart-sauce-labs-backpack"]');
+  cartButton = this.page.locator('//div[@id="shopping_cart_container"]');
 }
