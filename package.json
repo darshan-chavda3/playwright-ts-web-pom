@@ -1,7 +1,7 @@
 {
   "name": "playwright-ts-web-pom",
   "version": "1.0.0",
-  "description": "",
+  "description": "Playwright Page Object Model with TypeScript",
   "main": "index.js",
   "scripts": {
     "test": "npx playwright test"
