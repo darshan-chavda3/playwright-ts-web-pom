@@ -1,6 +1,6 @@
 # Playwright Page Object Model with TypeScript
 
-This repository demonstrates the implementation of the Page Object Model (POM) design pattern with Playwright. This project is designed to provide a robust and maintainable testing framework for web applications using Playwright and TypeScript, with a focus on the Page Object Model pattern.
+This repository demonstrates the implementation of the Page Object Model (POM) design pattern with Playwright. This project is designed to provide a robust and maintainable testing framework for web applications using Playwright and TypeScript, with a focus on the Page Object Model pattern. The site under test is [Swag Labs](https://www.saucedemo.com) , a demo eCommerce store.
 
 ## Getting Started
 Before following the steps given below, please ensure that npm and node are installed on your machine.
