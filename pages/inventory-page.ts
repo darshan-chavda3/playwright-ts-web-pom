@@ -1,10 +1,6 @@
-import { Page } from "@playwright/test";
+import { BasePage } from "./base-page";
 
-export class InventoryPage {
-  constructor(protected page: Page) {
-    this.page = page;
-  }
-
+export class InventoryPage extends BasePage {
   burgerMenu = this.page.locator('//button[@id="react-burger-menu-btn"]');
   allItemsOption = this.page.locator('//a[text()="All Items"]');
   aboutOption = this.page.locator('//a[text()="About"]');

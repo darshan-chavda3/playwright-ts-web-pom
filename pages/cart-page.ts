@@ -1,10 +1,6 @@
-import { Page } from "@playwright/test";
+import { BasePage } from "./base-page";
 
-export class CartPage {
-  constructor(protected page: Page) {
-    this.page = page;
-  }
-
+export class CartPage extends BasePage {
   checkoutButton = this.page.locator('//button[@id="checkout"]');
   firstName = this.page.locator('//input[@id="first-name"]');
   lastName = this.page.locator('//input[@id="last-name"]');
