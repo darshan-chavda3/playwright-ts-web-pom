@@ -1,4 +1,4 @@
-import { BasePage } from "./base-page";
+import { BasePage, expect } from "./base-page";
 
 export class CartPage extends BasePage {
   checkoutButton = this.page.locator('//button[@id="checkout"]');
@@ -11,4 +11,20 @@ export class CartPage extends BasePage {
   successMessage = this.page.locator('//h2[@class="complete-header"]');
   backHomeButton = this.page.locator('//button[@id="back-to-products"]');
   postalErrorMessage = this.page.locator('//h3[@data-test="error"]');
+
+  async checkoutInformation(firstName: string, lastName: string, postalCode: string) {
+    const page = this.page;
+    await this.checkoutButton.click();
+    await expect(page).toHaveURL("/checkout-step-one.html");
+    await this.firstName.fill(firstName);
+    await this.lastName.fill(lastName);
+    await this.postalCode.fill(postalCode);
+    await this.continueButton.click();
+  }
+
+  async finalCheckoutStep(itemName: string) {
+    const page = this.page
+    await expect(this.itemName).toHaveText(itemName);
+    await this.finishButton.click();
+  }
 }

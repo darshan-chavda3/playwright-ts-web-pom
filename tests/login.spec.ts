@@ -4,11 +4,12 @@ import { Pages } from "../pages/pages";
 
 test("@P1 @Smoke verify user login with valid credentials and logout successfully", async ({ page }) => {
   const pages = Pages(page);
-  await page.goto("/");
-  await pages.loginPage.userName.fill(loginData.userName);
-  await pages.loginPage.password.fill(loginData.password);
-  await pages.loginPage.loginButton.click();
+
+  // Login with valid credentials
+  await pages.loginPage.login(loginData.userName, loginData.password);
   await expect(page).toHaveURL("/inventory.html");
+
+  // Logout to page
   await pages.inventoryPage.burgerMenu.click();
   await pages.inventoryPage.logoutOption.click();
   await expect(page).toHaveURL("/");
@@ -16,10 +17,11 @@ test("@P1 @Smoke verify user login with valid credentials and logout successfull
 
 test("@P1 @Regression verify user is unable to login with invalid credentials", async ({ page }) => {
   const pages = Pages(page);
-  await page.goto("/");
-  await pages.loginPage.userName.fill(loginData.invalidUserName);
-  await pages.loginPage.password.fill(loginData.invalidPassword);
-  await pages.loginPage.loginButton.click();
+
+  // Login with invalid credentials
+  await pages.loginPage.login(loginData.invalidUserName, loginData.invalidPassword);
   await expect(page).not.toHaveURL("/inventory.html");
+
+  // Verify error message displayed
   await expect(pages.loginPage.errorMessage).toHaveText(loginData.errorMessage);
 });
